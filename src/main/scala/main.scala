@@ -4,6 +4,10 @@
 *   Description : Conversion
 * */
 
-object main extends App  {
+object Demo    {
   println("/**********************************************************/")
+  def main(args: Array[String]): Unit = {
+   println("Hello world!")
+  }
+
 }
