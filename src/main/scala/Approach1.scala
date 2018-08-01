@@ -135,23 +135,24 @@ object Approach1    {
 
     println("------------------------")
     // given object <name,weight>, find the min and max weight along with the person name
-    var ret = Approach1.find_max_and_min(lstD);
-    println("---->res1:"+ret)
+//    var ret = Approach1.find_max_and_min(lstD);
+//    println("---->res1:"+ret)
     println("------------------------")
     // convert given a list of double weights (kgs to lbs)
-    ret = convert_list_to_k(List[Double](1.1,2.2,1.1));
+    var ret = Approach1.convert_list_to_k(List[Double](111.1,211.2,111.1))
     println("---->res2:"+ret +" "+printType(ret))
     println("------------------------")
 
+    printType(ret)
     // given list of <weight>,  find the min and max
-    ret = Approach1.find_max_and_min(List(ret));
+    ret = Approach1.find_max_and_min(ret);
     println("---->res3:"+ret)
     println("------------------------")
     //  convert from kgs to lbs
-    ret = convert_list_to_k(lstD);
+    ret = Approach1.convert_list_to_k(lstD);
     println("---->res4:"+ret)
     println("------------------------")
-    ret = Approach1.find_max_and_min(List(ret));
+//    ret = Approach1.find_max_and_min(List(ret));
     println("---->res5:"+ret)
 
   }
