@@ -31,8 +31,8 @@ object Approach1    {
 
 //  var ret = find_max_and_min(personlstI(lst1));
 //     var ret = convert_list_to_k(lstI);
-     var ret = convert_list_to_k(lstD);
-//  var ret = convert_list_to_k(List[Double](1.1,2.2,1.1));
+//     var ret = convert_list_to_k(lstD);
+  var ret = convert_list_to_k(List[Double](1.1,2.2,1.1));
   println("max:"+max +" min:"+min +" "+ ret);
 
   def printType[T](x:T) :Unit = {
@@ -48,8 +48,6 @@ object Approach1    {
   def extractString(expectedNumber: Any): String = expectedNumber match {
     case d: String => d
   }
-
-
 
   def convert_list_to_k(in:List[Any]):Any =  {
 
@@ -87,12 +85,16 @@ object Approach1    {
       );
       return newlst
     }
-//    newin2.filter( _ match {
-//
-//      case x: ( Double) => {
-//        var i =  dw * 0.45.toDouble
-//      }
-//    )
+
+    if(newin2.size > 0 ){
+      var newlst: List[Double] = List[Double]()
+        newin2.foreach( x => {
+            var i =  x * 0.45.toDouble
+            newlst = newlst ::: List(i)
+          }
+        )
+      return newlst
+    }
 
 //    else if( in.isInstanceOf[List[Int]]){
 //
