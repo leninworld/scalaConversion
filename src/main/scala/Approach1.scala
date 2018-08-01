@@ -33,10 +33,9 @@ object Approach1    {
     case d: String => d
   }
 
-  def convert_list_to_k(in:List[Any]): List[Any] =  {
+  def convert_list_to_k(in:List[Any]): Any =  {
 
-    var newin1  = in.collect{case personD(x:String, y:Double) => (x:String, y:Double)
-                            }
+    var newin1  = in.collect{case personD(x:String, y:Double) => (x:String, y:Double)}
     var newin2  = in.collect{case (x:Double) => (x:Double) }
 
     println("in:"+in)
@@ -140,20 +139,20 @@ object Approach1    {
     println("------------------------")
     // convert given a list of double weights (kgs to lbs)
     var ret = Approach1.convert_list_to_k(List[Double](111.1,211.2,111.1))
-    println("---->res2:"+ret +" "+printType(ret))
+    println("---->res1:"+ret +" "+printType(ret))
     println("------------------------")
 
     printType(ret)
     // given list of <weight>,  find the min and max
-    ret = Approach1.find_max_and_min(ret);
-    println("---->res3:"+ret)
+    ret = Approach1.find_max_and_min(List(ret))
+    println("---->res2:"+ret)
     println("------------------------")
     //  convert from kgs to lbs
-    ret = Approach1.convert_list_to_k(lstD);
-    println("---->res4:"+ret)
+    ret = Approach1.convert_list_to_k(lstD)
+    println("---->res3:"+ret)
     println("------------------------")
-//    ret = Approach1.find_max_and_min(List(ret));
-    println("---->res5:"+ret)
+    ret = Approach1.find_max_and_min(List(ret));
+    println("---->res4:"+ret)
 
   }
 
