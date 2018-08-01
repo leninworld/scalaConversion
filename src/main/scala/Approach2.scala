@@ -1,4 +1,4 @@
-object HelloWorld    {
+object Approach2    {
   println("/**********/")
 
   case class personI(name: String, weight: Int)
