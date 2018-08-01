@@ -58,8 +58,7 @@ object Approach1    {
     println("in:"+in)
     println("newin1:"+newin1)
     println("newin2:"+newin2)
-
-
+    
     if(newin1.size > 0 ){
       var newlst: List[personD] = List[personD]()
       newin1.foreach( x  => {
@@ -70,16 +69,6 @@ object Approach1    {
             var p1 = personD(nname, i)
             newlst = newlst ::: List(p1)
 
-//            for ((name, w) <- x) {
-//                  var dw = extractDouble(w)
-//
-//                  var i =  dw * 0.45.toDouble
-//                  var nname = extractString(name)
-//                  var p1 = personD(nname, i)
-//                  newlst = newlst ::: List(p1)
-//
-//              }
-//
       }
 
       );
@@ -95,14 +84,6 @@ object Approach1    {
         )
       return newlst
     }
-
-//    else if( in.isInstanceOf[List[Int]]){
-//
-//      println("(int)given list: "+in)
-//      println("list of integers given")
-//      ("na", 0, "na", 0)
-//    }
-
 
   }
 
