@@ -9977,7 +9977,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.3!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.14.4!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 11821ms :: artifacts dl 222ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 6736ms :: artifacts dl 275ms[0m
 [0m[[0mdebug[0m] [0m	report for workspace-graph-research#workspace-graph-research_2.12;1.0 compile produced in /Users/lenin/Dropbox/scalaConversion/target/scala-2.12/resolution-cache/reports/workspace-graph-research-workspace-graph-research_2.12-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for workspace-graph-research#workspace-graph-research_2.12;1.0 runtime produced in /Users/lenin/Dropbox/scalaConversion/target/scala-2.12/resolution-cache/reports/workspace-graph-research-workspace-graph-research_2.12-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for workspace-graph-research#workspace-graph-research_2.12;1.0 test produced in /Users/lenin/Dropbox/scalaConversion/target/scala-2.12/resolution-cache/reports/workspace-graph-research-workspace-graph-research_2.12-test.xml[0m
@@ -9991,7 +9991,7 @@
 [0m[[0mdebug[0m] [0m	report for workspace-graph-research#workspace-graph-research_2.12;1.0 docs produced in /Users/lenin/Dropbox/scalaConversion/target/scala-2.12/resolution-cache/reports/workspace-graph-research-workspace-graph-research_2.12-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for workspace-graph-research#workspace-graph-research_2.12;1.0 pom produced in /Users/lenin/Dropbox/scalaConversion/target/scala-2.12/resolution-cache/reports/workspace-graph-research-workspace-graph-research_2.12-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for workspace-graph-research#workspace-graph-research_2.12;1.0 scala-tool produced in /Users/lenin/Dropbox/scalaConversion/target/scala-2.12/resolution-cache/reports/workspace-graph-research-workspace-graph-research_2.12-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (11821ms resolve - 222ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (6736ms resolve - 275ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
 [0m[[33mwarn[0m] [0mFound version conflict(s) in library dependencies; some are suspected to be binary incompatible:[0m
 [0m[[33mwarn[0m] [0m[0m

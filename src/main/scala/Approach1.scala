@@ -102,6 +102,20 @@ object Approach1    {
     }
   }
 
+  def format_weight(in:List[Any]): Unit ={
+    var ret = Approach1.convert_list_to_k(in)
+    ret = Approach1.find_max_and_min(List(ret))
+    print_max_and_min(ret)
+  }
+
+  def print_weight(in: Any): Unit = {
+
+  }
+
+  def print_max_and_min(in: Any): Unit = {
+    println("{max weight, min weight} => " + in)
+  }
+
   def main(args: Array[String]): Unit = {
 
     // START - wrapper Sequence
@@ -110,45 +124,17 @@ object Approach1    {
     val p3 = Approach1.personD("kishore", 60.1)
     val p4 = Approach1.personD("lalitha", 68.1)
 
-    var lstD = List(p1, p2 , p3)
-    println("------------------------")
-    // convert given a list of double weights (kgs to lbs)
-    var ret = Approach1.convert_list_to_k(List[Double](65.1,100.2,77.1, 54))
-    println("---->res1:"+ret +" "+printType(ret))
-    println("------------------------")
-
-    // given list of <weight>,  find the min and max
-    ret = Approach1.find_max_and_min(List(ret))
-    println("---->res2:"+ret)
-    println("------------------------")
-    //  convert from kgs to lbs
-    ret = Approach1.convert_list_to_k(lstD)
-    println("---->res3:"+ret)
-    println("------------------------")
-    ret = Approach1.find_max_and_min(List(ret));
-    println("---->res4:"+ret)
-    // END - wrapper Sequence
+    /////// testing run for list of weights
+    var lst = List[Double](65.1, 120.2, 77.1, 54)
+    format_weight(lst)
+    /////// testing run for list of <name, weight>
+    var lstND = List(p1, p2 , p3)
+    format_weight(lstND)
 
   }
 
 }
 
-
-//  def print_weight(in: Any) = in match {
-//
-//    case Strings(vs) => {
-//      println("hi1")
-//      ("na", 0, "na", 0)
-//    }
-//    case Ints(vs) => {
-//      println("hi2")
-//      ("na", 0, "na", 0)
-//    }
-//    case vs => {
-//
-//    }
-//
-//  }
 
 
 
