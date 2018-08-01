@@ -129,12 +129,12 @@ object Approach1    {
     println("----------------------------------")
     println("test run for list of weights")
     var lst = List[Double](65.1, 120.2, 77.1, 54)
-    format_weight(lst)
+    var out1 = format_weight(lst)
     /////// test run for list of <name, weight>
     println("----------------------------------")
     println("test run for list of <name, weight>")
     var lstND = List(p1, p2 , p3)
-    format_weight(lstND)
+    var out2 = format_weight(lstND)
     println("----------------------------------")
 
   }
