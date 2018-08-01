@@ -23,13 +23,13 @@ object Approach1    {
     var newin2  = in.collect{case (x:Double) => (x:Double) }
 
     println("in:"+in)
-    println("newin1:"+newin1)
-    println("newin2:"+newin2)
+//    println("newin1:"+newin1)
+//    println("newin2:"+newin2)
     var newlst : List[Any] = List[Any]()
     if(newin1.size > 0 ){
       newin1.foreach( x  => {
 
-            println("inside personI: " + x+" "+x._1 +" "+x._2)
+           //println("inside personD: " + x+" "+x._1 +" "+x._2)
             var i =  x._2 / 0.45359237
             var nname = x._1
             var p1 = personD(nname, i)
@@ -64,14 +64,14 @@ object Approach1    {
     var newin1  = newin.collect{case personD(x:String, y:Double) => (x:String, y:Double)}
     var newin2  = newin.collect{case (x:Double) => (x:Double) }
 
-    println("in:"+in)
-    println("newin1:"+newin1)
-    println("newin2:"+newin2)
+//    println("in:"+in)
+//    println("newin1:"+newin1)
+//    println("newin2:"+newin2)
     var newlst : List[Any] = List[Any]()
     if(newin1.size > 0 ){
       newin1.foreach( x  => {
 
-        println("inside personI: " + x+" "+x._1 +" "+x._2)
+//        println("inside personI: " + x+" "+x._1 +" "+x._2)
 
         if(x._2 > max){
           max = x._2
@@ -104,20 +104,19 @@ object Approach1    {
 
   def main(args: Array[String]): Unit = {
 
+    // START - wrapper Sequence
     val p1 = Approach1.personD("lenin", 90.9)
     val p2 = Approach1.personD("martin", 70.2)
     val p3 = Approach1.personD("kishore", 60.1)
     val p4 = Approach1.personD("lalitha", 68.1)
 
     var lstD = List(p1, p2 , p3)
-    // START - wrapper Sequence
     println("------------------------")
     // convert given a list of double weights (kgs to lbs)
-    var ret = Approach1.convert_list_to_k(List[Double](111.1,211.2,111.1))
+    var ret = Approach1.convert_list_to_k(List[Double](65.1,100.2,77.1, 54))
     println("---->res1:"+ret +" "+printType(ret))
     println("------------------------")
 
-    printType(ret)
     // given list of <weight>,  find the min and max
     ret = Approach1.find_max_and_min(List(ret))
     println("---->res2:"+ret)
@@ -129,6 +128,7 @@ object Approach1    {
     ret = Approach1.find_max_and_min(List(ret));
     println("---->res4:"+ret)
     // END - wrapper Sequence
+
   }
 
 }
