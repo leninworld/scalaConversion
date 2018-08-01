@@ -2,3 +2,5 @@
 all {file:/Users/lenin/Dropbox/scalaConversion/}scalaconversion/products {file:/Users/lenin/Dropbox/scalaConversion/}scalaconversion/test:products
 ;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo /private/var/folders/nj/fz28chyd2xbc08pjdqcb6hr00000gn/T/sbt-structure.xml
 all {file:/Users/lenin/Dropbox/scalaConversion/}scalaconversion/products {file:/Users/lenin/Dropbox/scalaConversion/}scalaconversion/test:products
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo /private/var/folders/nj/fz28chyd2xbc08pjdqcb6hr00000gn/T/sbt-structure.xml
+all {file:/Users/lenin/Dropbox/scalaConversion/}scalaconversion/products {file:/Users/lenin/Dropbox/scalaConversion/}scalaconversion/test:products
