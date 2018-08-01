@@ -1,3 +1,5 @@
+import scala.util.Try
+
 object Approach1    {
   println("/**********/")
 
@@ -6,8 +8,8 @@ object Approach1    {
     def weight:T
   }
 
-  case class personI(name: String, weight: Int) extends Something[String, Int]
-  case class personlstI(values: List[personI])
+//  case class personI(name: String, weight: Int) extends Something[String, Int]
+//  case class personlstI(values: List[personI])
 
   case class personD(name: String, weight: Double) extends Something[String, Double]
   case class personlstD(values: List[personD])
@@ -20,13 +22,7 @@ object Approach1    {
   val p2 = personD("name1", 70.2)
   val p3 = personD("name4a", 60.1)
 
-  var lst = List(p1, p2 , p3)
-
-  val p4 = personI("lenin", 90)
-  val p5 = personI("name1", 70)
-  val p6 = personI("name4a", 60)
-
-  var lst1 = List(p4, p5 , p6)
+  var lstD = List(p1, p2 , p3)
 
   var min = 500.0
   var max = -1.0
@@ -34,37 +30,76 @@ object Approach1    {
   var min_name :String = ""
 
 //  var ret = find_max_and_min(personlstI(lst1));
-     var ret = convert_list_to_k(lst1);
+//     var ret = convert_list_to_k(lstI);
+     var ret = convert_list_to_k(lstD);
+//  var ret = convert_list_to_k(List[Double](1.1,2.2,1.1));
   println("max:"+max +" min:"+min +" "+ ret);
 
   def printType[T](x:T) :Unit = {
     println(x.getClass.toString())
   }
 
-  def convert_list_to_k(in:List[Any]) : Any = in match{
+  def extractDouble(expectedNumber: Any): Double = expectedNumber match {
+    case i: Int => i.toDouble
+    case l: Long => l.toDouble
+    case d: Double => d
+  }
 
-    case vs:List[person] => {
-      var newlst: List[Any] = List[Any]()
+  def extractString(expectedNumber: Any): String = expectedNumber match {
+    case d: String => d
+  }
 
-      for (person <- in) {
-        println("10:" + person+" "+person )
 
-        person match {
-          case v:personI => {
-            var i = (v.weight).toDouble * 0.45.toDouble
-            var p1 = personD(v.name, i)
+
+  def convert_list_to_k(in:List[Any]):Any =  {
+
+    var newin1  = in.collect{case personD(x:String, y:Double) => (x:String, y:Double)
+                            }
+    var newin2  = in.collect{case (x:Double) => (x:Double) }
+
+    println("in:"+in)
+    println("newin1:"+newin1)
+    println("newin2:"+newin2)
+
+
+    if(newin1.size > 0 ){
+      var newlst: List[personD] = List[personD]()
+      newin1.foreach( x  => {
+
+            println("inside personI: " + x+" "+x._1 +" "+x._2)
+            var i =  x._2 * 0.45.toDouble
+            var nname = extractString(x._1 )
+            var p1 = personD(nname, i)
             newlst = newlst ::: List(p1)
-          }
-        }
 
+//            for ((name, w) <- x) {
+//                  var dw = extractDouble(w)
+//
+//                  var i =  dw * 0.45.toDouble
+//                  var nname = extractString(name)
+//                  var p1 = personD(nname, i)
+//                  newlst = newlst ::: List(p1)
+//
+//              }
+//
       }
 
+      );
       return newlst
     }
-    case _ => {
-      println("hi1")
-      ("na", 0, "na", 0)
-    }
+//    newin2.filter( _ match {
+//
+//      case x: ( Double) => {
+//        var i =  dw * 0.45.toDouble
+//      }
+//    )
+
+//    else if( in.isInstanceOf[List[Int]]){
+//
+//      println("(int)given list: "+in)
+//      println("list of integers given")
+//      ("na", 0, "na", 0)
+//    }
 
 
   }
