@@ -1,5 +1,3 @@
-import scala.util.Try
-
 object Approach1    {
   println("/**********/")
 
@@ -18,22 +16,11 @@ object Approach1    {
   case class Ints(values: List[Int])
   case class Doubles(values: List[Double])
 
-  val p1 = personD("lenin", 90.9)
-  val p2 = personD("name1", 70.2)
-  val p3 = personD("name4a", 60.1)
-
-  var lstD = List(p1, p2 , p3)
 
   var min = 500.0
   var max = -1.0
   var max_name :String = ""
   var min_name :String = ""
-
-//  var ret = find_max_and_min(personlstI(lst1));
-//     var ret = convert_list_to_k(lstI);
-//     var ret = convert_list_to_k(lstD);
-  var ret = convert_list_to_k(List[Double](1.1,2.2,1.1));
-  println("max:"+max +" min:"+min +" "+ ret);
 
   def printType[T](x:T) :Unit = {
     println(x.getClass.toString())
@@ -49,7 +36,7 @@ object Approach1    {
     case d: String => d
   }
 
-  def convert_list_to_k(in:List[Any]):Any =  {
+  def convert_list_to_k(in:List[Any]): Any =  {
 
     var newin1  = in.collect{case personD(x:String, y:Double) => (x:String, y:Double)
                             }
@@ -86,38 +73,88 @@ object Approach1    {
     }
 
   }
+  def find_max_and_min(in: List[Any]): Any = {
 
-//  def find_max_and_min(in: Any): (String, Double, String, Double) = in match{
-//
-//    case Strings(vs) => {
-//      println("hi1")
-//      ("na", 0, "na", 0)
-//    }
-//    case Ints(vs) => {
-//      println("hi2")
-//      ("na", 0, "na", 0)
-//    }
-//    case vs => {
-//      println("hi3 "+ vs)
-//
-//      lst.map{
-//        t => {
-//          println("1:"+ t.name +" 2:"+t.weight);
-//          if(t.weight > max){
-//            max = (t.weight).toDouble
-//            max_name = t.name
-//          }
-//          if(t.weight < min){
-//            min = (t.weight).toDouble
-//            min_name = t.name
-//          }
-//        }
-//      }
-//      println("31:"+ min_name +" 41:"+max_name);
-//      (max_name, max, min_name, min)
-//    }
-//
-//  }
+    var newin1  = in.collect{case personD(x:String, y:Double) => (x:String, y:Double)}
+    var newin2  = in.collect{case (x:Double) => (x:Double) }
+
+    println("in:"+in)
+    println("newin1:"+newin1)
+    println("newin2:"+newin2)
+
+    if(newin1.size > 0 ){
+      var newlst: List[personD] = List[personD]()
+      newin1.foreach( x  => {
+
+        println("inside personI: " + x+" "+x._1 +" "+x._2)
+
+        var nname = extractString(x._1 )
+
+        if(x._2 > max){
+          max = x._2
+          max_name = nname
+        }
+        if(x._2 < min){
+          min = x._2
+          min_name = nname
+        }
+
+
+      }
+
+      );
+      return (max_name, max, min_name, min)
+    }
+
+    if(newin2.size > 0 ){
+      var newlst: List[Double] = List[Double]()
+      newin2.foreach( x => {
+        if(x > max){
+          max = x
+        }
+        if(x < min){
+          min = x
+        }
+      }
+      )
+      (max_name, max, min_name, min)
+    }
+    println("31:"+ min_name +" 41:"+max_name);
+    (max_name, max, min_name, min)
+  }
+
+  def main(args: Array[String]): Unit = {
+
+    val p1 = Approach1.personD("lenin", 90.9)
+    val p2 = Approach1.personD("name1", 70.2)
+    val p3 = Approach1.personD("name4a", 60.1)
+
+    var lstD = List(p1, p2 , p3)
+
+    println("Hello world 1!")
+    // given object <name,weight>, find the min and max weight along with the person name
+    var ret = Approach1.find_max_and_min(lstD);
+    println("---->res1:"+ret)
+
+    // convert given a list of double weights (kgs to lbs)
+    ret = convert_list_to_k(List[Double](1.1,2.2,1.1));
+    println("---->res2:"+ret)
+
+    // given list of <weight>,  find the min and max
+    ret = Approach1.find_max_and_min(List(ret));
+    println("---->res3:"+ret)
+
+
+    //  convert from kgs to lbs
+    ret = convert_list_to_k(lstD);
+    println("---->res4:"+ret)
+
+
+
+  }
+
+}
+
 
 //  def print_weight(in: Any) = in match {
 //
@@ -135,8 +172,5 @@ object Approach1    {
 //
 //  }
 
-  def main(args: Array[String]): Unit = {
-    println("Hello world 1!")
-  }
 
-}
+
