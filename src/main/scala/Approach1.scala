@@ -22,7 +22,7 @@ object Approach1    {
     var newin1  = in.collect{case personD(x:String, y:Double) => (x:String, y:Double)}
     var newin2  = in.collect{case (x:Double) => (x:Double) }
 
-    println("in:"+in)
+    println("input:"+in)
 //    println("newin1:"+newin1)
 //    println("newin2:"+newin2)
     var newlst : List[Any] = List[Any]()
@@ -104,12 +104,13 @@ object Approach1    {
 
   def format_weight(in:List[Any]): Unit ={
     var ret = Approach1.convert_list_to_k(in)
+    print_weight(ret)
     ret = Approach1.find_max_and_min(List(ret))
     print_max_and_min(ret)
   }
 
   def print_weight(in: Any): Unit = {
-
+    println("Printing converted weights => " + in)
   }
 
   def print_max_and_min(in: Any): Unit = {
@@ -124,12 +125,17 @@ object Approach1    {
     val p3 = Approach1.personD("kishore", 60.1)
     val p4 = Approach1.personD("lalitha", 68.1)
 
-    /////// testing run for list of weights
+    /////// test run for list of weights
+    println("----------------------------------")
+    println("test run for list of weights")
     var lst = List[Double](65.1, 120.2, 77.1, 54)
     format_weight(lst)
-    /////// testing run for list of <name, weight>
+    /////// test run for list of <name, weight>
+    println("----------------------------------")
+    println("test run for list of <name, weight>")
     var lstND = List(p1, p2 , p3)
     format_weight(lstND)
+    println("----------------------------------")
 
   }
 
