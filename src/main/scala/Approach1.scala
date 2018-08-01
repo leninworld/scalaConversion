@@ -6,9 +6,6 @@ object Approach1    {
     def weight:T
   }
 
-//  case class personI(name: String, weight: Int) extends Something[String, Int]
-//  case class personlstI(values: List[personI])
-
   case class personD(name: String, weight: Double) extends Something[String, Double]
   case class personlstD(values: List[personD])
 
@@ -36,7 +33,7 @@ object Approach1    {
     case d: String => d
   }
 
-  def convert_list_to_k(in:List[Any]): Any =  {
+  def convert_list_to_k(in:List[Any]): List[Any] =  {
 
     var newin1  = in.collect{case personD(x:String, y:Double) => (x:String, y:Double)
                             }
@@ -45,9 +42,9 @@ object Approach1    {
     println("in:"+in)
     println("newin1:"+newin1)
     println("newin2:"+newin2)
-    
+    var newlst : List[Any] = List[Any]()
     if(newin1.size > 0 ){
-      var newlst: List[personD] = List[personD]()
+//      newlst: List[personD] = List[personD]()
       newin1.foreach( x  => {
 
             println("inside personI: " + x+" "+x._1 +" "+x._2)
@@ -63,7 +60,7 @@ object Approach1    {
     }
 
     if(newin2.size > 0 ){
-      var newlst: List[Double] = List[Double]()
+//        newlst: List[Double] = List[Double]()
         newin2.foreach( x => {
             var i =  x * 0.45.toDouble
             newlst = newlst ::: List(i)
@@ -71,19 +68,26 @@ object Approach1    {
         )
       return newlst
     }
-
+    return newlst
   }
+  def flatten(l: List[Any]): List[Any] = l flatMap {
+    case ls: List[_] => flatten(ls)
+    case h => List(h)
+  }
+
   def find_max_and_min(in: List[Any]): Any = {
 
-    var newin1  = in.collect{case personD(x:String, y:Double) => (x:String, y:Double)}
-    var newin2  = in.collect{case (x:Double) => (x:Double) }
+    var  newin = flatten(in)
+
+    var newin1  = newin.collect{case personD(x:String, y:Double) => (x:String, y:Double)}
+    var newin2  = newin.collect{case (x:Double) => (x:Double) }
 
     println("in:"+in)
     println("newin1:"+newin1)
     println("newin2:"+newin2)
-
+    var newlst : List[Any] = List[Any]()
     if(newin1.size > 0 ){
-      var newlst: List[personD] = List[personD]()
+//      var newlst: List[personD] = List[personD]()
       newin1.foreach( x  => {
 
         println("inside personI: " + x+" "+x._1 +" "+x._2)
@@ -107,7 +111,7 @@ object Approach1    {
     }
 
     if(newin2.size > 0 ){
-      var newlst: List[Double] = List[Double]()
+//      var newlst: List[Double] = List[Double]()
       newin2.foreach( x => {
         if(x > max){
           max = x
@@ -117,10 +121,8 @@ object Approach1    {
         }
       }
       )
-      (max_name, max, min_name, min)
+      (max, min)
     }
-    println("31:"+ min_name +" 41:"+max_name);
-    (max_name, max, min_name, min)
   }
 
   def main(args: Array[String]): Unit = {
@@ -131,25 +133,26 @@ object Approach1    {
 
     var lstD = List(p1, p2 , p3)
 
-    println("Hello world 1!")
+    println("------------------------")
     // given object <name,weight>, find the min and max weight along with the person name
     var ret = Approach1.find_max_and_min(lstD);
     println("---->res1:"+ret)
-
+    println("------------------------")
     // convert given a list of double weights (kgs to lbs)
     ret = convert_list_to_k(List[Double](1.1,2.2,1.1));
-    println("---->res2:"+ret)
+    println("---->res2:"+ret +" "+printType(ret))
+    println("------------------------")
 
     // given list of <weight>,  find the min and max
     ret = Approach1.find_max_and_min(List(ret));
     println("---->res3:"+ret)
-
-
+    println("------------------------")
     //  convert from kgs to lbs
     ret = convert_list_to_k(lstD);
     println("---->res4:"+ret)
-
-
+    println("------------------------")
+    ret = Approach1.find_max_and_min(List(ret));
+    println("---->res5:"+ret)
 
   }
 
