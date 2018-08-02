@@ -14,4 +14,5 @@ Unit Testing is done by script convertSpec.scala. This file is located in src/ma
 <b>How to run:</b>
 
 (1) This project can be opened using IntelliJ IDE or similar.
+
 (2) Run the sbt to get the dependencies before you run convertKg2lbs.scala  or convertSpec.scala.
