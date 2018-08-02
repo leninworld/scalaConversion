@@ -102,40 +102,25 @@ object Approach1    {
     }
   }
 
-  def format_weight(in:List[Any]): Unit ={
+  def format_weight(in:List[Any]): Any ={
     var ret = Approach1.convert_list_to_k(in)
     print_weight(ret)
     ret = Approach1.find_max_and_min(List(ret))
-    print_max_and_min(ret)
+    var res = print_max_and_min(ret)
+    res
   }
 
   def print_weight(in: Any): Unit = {
     println("Printing converted weights => " + in)
   }
 
-  def print_max_and_min(in: Any): Unit = {
+  def print_max_and_min(in: Any): Any = {
     println("{max weight, min weight} => " + in)
+    in
   }
 
   def main(args: Array[String]): Unit = {
-
-    // START - wrapper Sequence
-    val p1 = Approach1.personD("lenin", 90.9)
-    val p2 = Approach1.personD("martin", 70.2)
-    val p3 = Approach1.personD("kishore", 60.1)
-    val p4 = Approach1.personD("lalitha", 68.1)
-
-    /////// test run for list of weights
-    println("----------------------------------")
-    println("test run for list of weights")
-    var lst = List[Double](65.1, 120.2, 77.1, 54)
-    var out1 = format_weight(lst)
-    /////// test run for list of <name, weight>
-    println("----------------------------------")
-    println("test run for list of <name, weight>")
-    var lstND = List(p1, p2 , p3)
-    var out2 = format_weight(lstND)
-    println("----------------------------------")
+      println("Main method")
 
   }
 
