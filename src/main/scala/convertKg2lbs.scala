@@ -1,4 +1,4 @@
-object Approach1    {
+object convertKg2lbs    {
   println("/**********/")
 
   trait Something[String, T]{
@@ -103,9 +103,9 @@ object Approach1    {
   }
 
   def format_weight(in:List[Any]): Any ={
-    var ret = Approach1.convert_list_to_k(in)
+    var ret = convertKg2lbs.convert_list_to_k(in)
     print_weight(ret)
-    ret = Approach1.find_max_and_min(List(ret))
+    ret = convertKg2lbs.find_max_and_min(List(ret))
     var res = print_max_and_min(ret)
     res
   }
