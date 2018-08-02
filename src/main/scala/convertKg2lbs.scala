@@ -19,22 +19,19 @@ object convertKg2lbs    {
 
   def convert_list_to_k(in:List[Any]): Any =  {
 
+    // filter as per type
     var newin1  = in.collect{case personD(x:String, y:Double) => (x:String, y:Double)}
     var newin2  = in.collect{case (x:Double) => (x:Double) }
 
     println("input:"+in)
-//    println("newin1:"+newin1)
-//    println("newin2:"+newin2)
+
     var newlst : List[Any] = List[Any]()
     if(newin1.size > 0 ){
       newin1.foreach( x  => {
-
-           //println("inside personD: " + x+" "+x._1 +" "+x._2)
             var i =  x._2 / 0.45359237
             var nname = x._1
             var p1 = personD(nname, i)
             newlst = newlst ::: List(p1)
-
       }
 
       );
@@ -64,14 +61,9 @@ object convertKg2lbs    {
     var newin1  = newin.collect{case personD(x:String, y:Double) => (x:String, y:Double)}
     var newin2  = newin.collect{case (x:Double) => (x:Double) }
 
-//    println("in:"+in)
-//    println("newin1:"+newin1)
-//    println("newin2:"+newin2)
     var newlst : List[Any] = List[Any]()
     if(newin1.size > 0 ){
       newin1.foreach( x  => {
-
-//        println("inside personI: " + x+" "+x._1 +" "+x._2)
 
         if(x._2 > max){
           max = x._2
