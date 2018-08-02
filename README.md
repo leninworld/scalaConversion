@@ -1,6 +1,6 @@
 ### This project contains Scala scripts to convert a list of weights from kgs to lbs. 
 
-<b>Scripts overview:</b>
+<b>Scripts Overview:</b>
 
 (1) convertKg2lbs.scala - This file has methods convert_list_to_k(List[Any]), which takes list of any type. This file is found inside src/main/scala.
 (2) We basically give two type if inputs to convert_list_to_k, and one is list of weights and other is list of person object. Each person object can have a pair of name and weight (in kgs).
