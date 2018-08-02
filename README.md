@@ -1,4 +1,6 @@
-### This project contains Scala scripts to convert a list of weights from kgs to lbs. 
+### This project contains a Scala script to convert a list of weights from kgs to lbs. 
+
+The important part is to not to do any tightly bound static typecasting. It uses Any concept with List in Scala to achieve this.
 
 <b>Scripts Overview:</b>
 
